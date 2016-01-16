@@ -1,0 +1,74 @@
+[alias]
+  st = status
+  ci = commit
+  co = checkout
+  br = branch
+  nb = new-branch
+  df = diff
+  ds = diff --staged
+  do = diff origin/master
+  dl = diff --name-only
+  sb = squash-branch
+  snapshot = !git stash save "snapshot: $(date)" && git stash apply "stash@{0}"
+  remaster = rebase --onto origin/master origin/master
+  conflicts = diff --name-only --diff-filter=U
+  cpick = cherry-pick
+  ks = difftool
+
+[color]
+  ui = true
+  branch = auto
+  diff = auto
+  status = auto
+
+[core]
+  quotepath = false
+  autocrlf = false
+  filemode = false
+  excludesfile = /Users/louis/.gitignore
+  deltaBaseCacheLimit = 1G
+  attributesfile = /Users/louis/.gitattributes
+
+[diff]
+  tool = Kaleidoscope
+
+[diff "localizablestrings"]
+  textconv = "iconv -f utf-16 -t utf-8"
+
+[diff "plist"]
+  textconv = plutil -convert xml1 -o -
+
+[difftool]
+  prompt = false
+
+[difftool "Kaleidoscope"]
+  cmd = ksdiff --partial-changeset --relative-path \"$MERGED\" -- \"$LOCAL\" \"$REMOTE\"
+
+[filter "lfs"]
+  clean = git-lfs clean %f
+  smudge = git-lfs smudge %f
+  required = true
+
+[format]
+  pretty = format:"%Cred%h%Creset %ad%Cgreen%d%Creset %Cred%an%Creset %s"
+
+[help]
+  autocorrect = -1
+
+[log]
+  date = local
+
+[merge]
+  conflictstyle = diff3
+  tool = Kaleidoscope
+
+[mergetool]
+  prompt = false
+
+[mergetool "Kaleidoscope"]
+  cmd = ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" --snapshot \"$REMOTE\" --snapshot
+  trustExitCode = true
+
+[user]
+  name = Louis Romero
+  email = arcank@gmail.com
