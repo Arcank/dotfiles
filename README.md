@@ -4,7 +4,6 @@
 During a fresh install of OS X, sign into iCloud with Apple ID.
 
 ## Mac App Store
-* Xcode
 * 1Password
 * Acorn
 * Dash
@@ -15,6 +14,7 @@ During a fresh install of OS X, sign into iCloud with Apple ID.
 * Soulver
 * Twitter
 * The Unarchiver
+* Xcode
 
 ## Xcode
 Open and install components or simply:
@@ -25,8 +25,7 @@ xcode-select --install
 ## Homebrew
 Install Homebrew
 ```
-cd
-mkdir homebrew
+cd && mkdir homebrew
 SetFile -a V homebrew
 curl -L https://github.com/Homebrew/homebrew/tarball/master | tar xz --strip 1 -C homebrew
 ```
@@ -149,10 +148,10 @@ source ~/Developer/dotfiles/osx
 * Install license (PowerPack) stored in 1Password.
 
 ## Sublime Text
-* Install [Package Control](https://packagecontrol.io/installation). Known issue: https://github.com/wbond/package_control/issues/1002
+* Install [Package Control](https://packagecontrol.io/installation) ([known issue](https://github.com/wbond/package_control/issues/1002)).
 * Install PackageSync.
 * PackageSync: Sync Online - Define Online Sync Folder
-`/Users/louis/Dropbox/Utilitaires/Sublime Text Package Syncing`
+`$HOME/Dropbox/Utilitaires/Sublime Text Package Syncing`
 * Restart Sublime Text.
 
 ## Dash
