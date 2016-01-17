@@ -16,6 +16,15 @@ During a fresh install of OS X, sign into iCloud with Apple ID.
 * The Unarchiver
 * Xcode
 
+## System Preferences
+* Change background image.
+* Change resolution.
+* Change trackpad or mouse preferences.
+* Prevent computer from sleeping automatically when the display is off.
+* Don't ask too often for App Store password.
+
+- [ ] TODO: use defaults.
+
 ## Xcode
 Open and install components or simply:
 ```
