@@ -4,27 +4,17 @@
 During a fresh install of OS X, sign into iCloud with Apple ID.
 
 ## Mac App Store
-Xcode
-
-1Password
-
-Acorn
-
-Dash
-
-iMovie
-
-iPhoto
-
-iWork
-
-Reeder
-
-Soulver
-
-Twitter
-
-The Unarchiver
+* Xcode
+* 1Password
+* Acorn
+* Dash
+* iMovie
+* iPhoto
+* iWork
+* Reeder
+* Soulver
+* Twitter
+* The Unarchiver
 
 ## Xcode
 Open and install components or simply:
@@ -137,64 +127,56 @@ source ~/Developer/dotfiles/osx
 ```
 
 ## Dropbox
-Sign-in.
-
-Selective sync.
+* Sign-in.
+* Selective sync.
 
 - [ ] TODO: is there a way to version the preferences?
 
 ## Google Chrome
-Create a Perso profile.
-
-Sign-in with personal email.
-
-Log into Pocket.
-
-Go to https://inbox.google.com and set it as Protocol Handler for mailto:.
-
-Enable Offline mode for Drive items:
+* Create a Perso profile.
+* Sign-in with personal email.
+* Log into Pocket.
+* Go to https://inbox.google.com and set it as Protocol Handler for mailto:.
+* Enable Offline mode for Drive items:
 `Chrome > Apps > Docs > Settings > Turn on offline sync`.
 
 - [ ] TODO: any way to do it programatically?
 
 ## 1Password
-Use vault in `Dropbox/Utilitaires/1Password/1Password.opvault`.
+* Use vault in `Dropbox/Utilitaires/1Password/1Password.opvault`.
 
 ## Alfred
-Install license (PowerPack) stored in 1Password.
+* Install license (PowerPack) stored in 1Password.
 
 ## Sublime Text
-Install Package Control.
-https://packagecontrol.io/installation
-Known issue: https://github.com/wbond/package_control/issues/1002
-Install PackageSync.
-PackageSync: Sync Online - Define Online Sync Folder
+* Install [Package Control](https://packagecontrol.io/installation).
+* Known issue: https://github.com/wbond/package_control/issues/1002
+* Install PackageSync.
+* PackageSync: Sync Online - Define Online Sync Folder
 `/Users/louis/Dropbox/Utilitaires/Sublime Text Package Syncing`
-Restart Sublime Text.
+* Restart Sublime Text.
 
 ## Dash
-Restore purchases.
+* Restore purchases.
 
 ## DaisyDisk
-Install license stored in 1Password.
+* Install license stored in 1Password.
 
 ## Divvy
-Install license stored in 1Password.
+* Install license stored in 1Password.
 
 ## Kaleidoscope
-Install license stored in 1Password.
+* Install license stored in 1Password.
 
 ## Typinator
-Preferences in `Dropbox/Utilitaires/Typinator/Sets`.
+* Preferences in `Dropbox/Utilitaires/Typinator/Sets`.
 
 - [ ] TODO: find the defaults to change. Is it in `com.macility.typinator2`?
 
 ## Delivery Status Dashboard widget
-Download from https://junecloud.com/software/dashboard/delivery-status.html.
-
-Sign in.
-
-Allow local notifications.
+* Download from https://junecloud.com/software/dashboard/delivery-status.html.
+* Sign in.
+* Allow local notifications.
 
 # TODO
 
