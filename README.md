@@ -149,8 +149,7 @@ source ~/Developer/dotfiles/osx
 * Install license (PowerPack) stored in 1Password.
 
 ## Sublime Text
-* Install [Package Control](https://packagecontrol.io/installation).
-* Known issue: https://github.com/wbond/package_control/issues/1002
+* Install [Package Control](https://packagecontrol.io/installation). Known issue: https://github.com/wbond/package_control/issues/1002
 * Install PackageSync.
 * PackageSync: Sync Online - Define Online Sync Folder
 `/Users/louis/Dropbox/Utilitaires/Sublime Text Package Syncing`
