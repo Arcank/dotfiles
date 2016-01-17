@@ -1,10 +1,10 @@
 # New install
 Author: Louis Romero <arcank@gmail.com>
 
-## iCloud/App Store
-After a fresh install of OS X, sign into iCloud with Apple ID.
+## iCloud
+During a fresh install of OS X, sign into iCloud with Apple ID.
 
-## Install Mac App Store apps
+## Mac App Store
 Xcode
 1Password
 Acorn
@@ -18,11 +18,21 @@ Twitter
 The Unarchiver
 
 ## Xcode
-Open and install components or simply `xcode-select --install`.
+Open and install components or simply:
+```
+xcode-select --install
+```
 
 ## Homebrew
-cd && mkdir homebrew && curl -L https://github.com/Homebrew/homebrew/tarball/master | tar xz --strip 1 -C homebrew
+Install Homebrew
+```
+cd
+mkdir homebrew
 SetFile -a V homebrew
+curl -L https://github.com/Homebrew/homebrew/tarball/master | tar xz --strip 1 -C homebrew
+```
+Install brews
+```
 brew install colordiff
 brew install dockutil
 brew install imagemagick --with-webp
@@ -33,21 +43,31 @@ brew install watch
 brew install wget --with-iri
 brew install zsh-completions
 brew install z
-TODO: tap homebrew-bundle and use a Brewfile.
+```
+
+- [ ] TODO: tap homebrew-bundle and use a Brewfile.
 
 ## GitHub
-Generate SSH keys (https://help.github.com/articles/generating-ssh-keys/).
+Generate SSH keys with [GitHub instructions](https://help.github.com/articles/generating-ssh-keys/).
+```
 ssh-keygen -t rsa -b 4096 -C "arcank@gmail.com"
 pbcopy < ~/.ssh/id_rsa.pub
-- Add the public key to https://github.com/settings/ssh.
-- Add the private key to `ssh-agent`.
-ssh-add ~/.ssh/id_rsa
-- Test the connection.
-ssh -T git@github.com
-- Optional: set up credential caching.
-https://help.github.com/articles/caching-your-github-password-in-git/
+```
+Add the public key to https://github.com/settings/ssh.
 
-## Install dotfiles
+Add the private key to `ssh-agent`.
+```
+ssh-add ~/.ssh/id_rsa
+```
+Test the connection.
+```
+ssh -T git@github.com
+```
+
+- [ ] Optional: set up [credential caching](https://help.github.com/articles/caching-your-github-password-in-git/).
+
+## dotfiles
+```
 mkdir ~/Developer
 cd ~/Developer
 git clone git@github.com:Arcank/dotfiles.git
@@ -57,11 +77,15 @@ ln -s Developer/dotfiles/gitignore .gitignore
 ln -s Developer/dotfiles/lldbinit .lldbinit
 ln -s Developer/dotfiles/zshenv .zshenv
 ln -s Developer/dotfiles/zshrc .zshrc
+```
 
 ## zsh
+```
 chsh -s /bin/zsh
+```
 
 ## Caskroom
+```
 cd && mkdir -p caskroom/bin
 SetFile -a V caskroom
 brew install caskroom/cask/brew-cask
@@ -82,8 +106,10 @@ brew cask install slack
 brew cask install sublime-text3
 brew cask install transmission
 brew cask install typinator59
+```
 
 ## QuickLook plugins
+```
 brew cask install provisioning
 brew cask install qlcolorcode
 brew cask install qlimagesize
@@ -94,22 +120,28 @@ brew cask install quicklook-csv
 brew cask install quicklook-json
 brew cask install webpquicklook
 killall Finder
+```
 
-## Set OS X preferences (may need apps to be installed first?)
+## OS X preferences
+```
 source ~/Developer/dotfiles/osx
+```
 
 ## Dropbox
 Sign-in.
 Selective sync.
-TODO: is there a way to version the preferences?
+
+- [ ] TODO: is there a way to version the preferences?
 
 ## Google Chrome
 Create a Perso profile.
-Sign-in with louis@romero-hsu.com.
+Sign-in with personal email.
 Log into Pocket.
 Go to https://inbox.google.com and set it as Protocol Handler for mailto:.
-Enable Offline mode for Drive items. Chrome > Apps > Docs > Settings > Turn on offline sync.
-TODO: any way to do it programatically?
+Enable Offline mode for Drive items:
+`Chrome > Apps > Docs > Settings > Turn on offline sync`.
+
+- [ ] TODO: any way to do it programatically?
 
 ## 1Password
 Use vault in `Dropbox/Utilitaires/1Password/1Password.opvault`.
@@ -140,7 +172,8 @@ Install license stored in 1Password.
 
 ## Typinator
 Preferences in `Dropbox/Utilitaires/Typinator/Sets`.
-TODO: find the defaults to change. Is it in `com.macility.typinator2`?
+
+- [ ] TODO: find the defaults to change. Is it in `com.macility.typinator2`?
 
 ## Delivery Status Dashboard widget
 Download from https://junecloud.com/software/dashboard/delivery-status.html.
@@ -149,18 +182,11 @@ Allow local notifications.
 
 # TODO
 
-bootstrap.sh
-
-http://star.mit.edu/cluster/docs/0.92rc2/manual/shell_completion.html
-
-MoSh
-
-https://github.com/mathiasbynens/dotfiles
-
-https://github.com/neovim/neovim
-
-vimrc
-
-vundle
-
-https://github.com/Homebrew/homebrew-bundle
+- [ ] bootstrap.sh
+- [ ] http://star.mit.edu/cluster/docs/0.92rc2/manual/shell_completion.html
+- [ ] MoSh
+- [ ] https://github.com/mathiasbynens/dotfiles
+- [ ] https://github.com/neovim/neovim
+- [ ] vimrc
+- [ ] vundle
+- [ ] https://github.com/Homebrew/homebrew-bundle
