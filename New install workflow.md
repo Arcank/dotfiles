@@ -51,13 +51,12 @@ https://help.github.com/articles/caching-your-github-password-in-git/
 mkdir ~/Developer
 cd ~/Developer
 git clone git@github.com:Arcank/dotfiles.git
-ln -s ~/Developer/dotfiles/gitattributes ~/.gitattributes
-ln -s ~/Developer/dotfiles/gitconfig ~/.gitconfig
-ln -s ~/Developer/dotfiles/gitignore ~/.gitignore
-ln -s ~/Developer/dotfiles/lldbinit ~/.lldbinit
-ln -s ~/Developer/dotfiles/ssh ~/.ssh
-ln -s ~/Developer/dotfiles/zshenv ~/.zshenv
-ln -s ~/Developer/dotfiles/zshrc ~/.zshrc
+ln -s Developer/dotfiles/gitattributes .gitattributes
+ln -s Developer/dotfiles/gitconfig .gitconfig
+ln -s Developer/dotfiles/gitignore .gitignore
+ln -s Developer/dotfiles/lldbinit .lldbinit
+ln -s Developer/dotfiles/zshenv .zshenv
+ln -s Developer/dotfiles/zshrc .zshrc
 
 ## zsh
 chsh -s /bin/zsh
