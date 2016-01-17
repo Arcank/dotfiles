@@ -162,6 +162,8 @@ https://junecloud.com/software/dashboard/delivery-status.html
 
 # TODO
 
+bootstrap.sh
+
 http://star.mit.edu/cluster/docs/0.92rc2/manual/shell_completion.html
 
 MoSh
