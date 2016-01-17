@@ -1,20 +1,29 @@
 # New install
-Author: Louis Romero <arcank@gmail.com>
 
 ## iCloud
 During a fresh install of OS X, sign into iCloud with Apple ID.
 
 ## Mac App Store
 Xcode
+
 1Password
+
 Acorn
+
 Dash
+
 iMovie
+
 iPhoto
+
 iWork
+
 Reeder
+
 Soulver
+
 Twitter
+
 The Unarchiver
 
 ## Xcode
@@ -129,15 +138,20 @@ source ~/Developer/dotfiles/osx
 
 ## Dropbox
 Sign-in.
+
 Selective sync.
 
 - [ ] TODO: is there a way to version the preferences?
 
 ## Google Chrome
 Create a Perso profile.
+
 Sign-in with personal email.
+
 Log into Pocket.
+
 Go to https://inbox.google.com and set it as Protocol Handler for mailto:.
+
 Enable Offline mode for Drive items:
 `Chrome > Apps > Docs > Settings > Turn on offline sync`.
 
@@ -177,7 +191,9 @@ Preferences in `Dropbox/Utilitaires/Typinator/Sets`.
 
 ## Delivery Status Dashboard widget
 Download from https://junecloud.com/software/dashboard/delivery-status.html.
+
 Sign in.
+
 Allow local notifications.
 
 # TODO

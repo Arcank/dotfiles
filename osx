@@ -327,7 +327,7 @@ defaults write com.apple.TextEdit PlainTextEncodingForWrite -int 4
 #-------------------------------------------------------------------------------
 # Use `~/Downloads/Incomplete` to store incomplete downloads.
 defaults write org.m0k.transmission UseIncompleteDownloadFolder -bool true
-defaults write org.m0k.transmission IncompleteDownloadFolder -string "${HOME}/Downloads/Incomplete"
+defaults write org.m0k.transmission IncompleteDownloadFolder -string "~/Downloads/Incomplete"
 
 # Don't prompt for confirmation before downloading.
 defaults write org.m0k.transmission DownloadAsk -bool false
