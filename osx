@@ -1,12 +1,22 @@
 #!/usr/bin/env bash
 # ./osx
 #
-# Mostly from https://github.com/mathiasbynens/dotfiles/blob/master/.osx
+# Mostly from http://mths.be/osx
+
+killall System\ Preferences
 
 #-------------------------------------------------------------------------------
 # General UI/UX
 #-------------------------------------------------------------------------------
-# Menu bar: hide the Clock icon.
+# Set up Login items.
+osascript -e 'tell application "System Events" to make new login item at end with properties {path:"/Applications/Alfred 2.app", name:"Alfred 2", hidden:true}'
+osascript -e 'tell application "System Events" to make new login item at end with properties {path:"/Applications/Day-O.app", name:"Day-O", hidden:true}'
+osascript -e 'tell application "System Events" to make new login item at end with properties {path:"/Applications/Divvy.app", name:"Divvy", hidden:true}'
+osascript -e 'tell application "System Events" to make new login item at end with properties {path:"/Applications/Dropbox.app", name:"Dropbox", hidden:true}'
+osascript -e 'tell application "System Events" to make new login item at end with properties {path:"/Applications/Flux.app", name:"f.lux", hidden:true}'
+osascript -e 'tell application "System Events" to make new login item at end with properties {path:"/Applications/Typinator.app", name:"Typinator", hidden:true}'
+
+# Menu bar: hide the Clock icon, as it is replaced by Day-O.
 for domain in ~/Library/Preferences/ByHost/com.apple.systemuiserver.*; do
   defaults write "${domain}" dontAutoLoad -array \
     "/System/Library/CoreServices/Menu Extras/Clock.menu"
@@ -54,13 +64,13 @@ defaults write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
 defaults write com.apple.universalaccess closeViewScrollWheelToggle -bool true
 defaults write com.apple.universalaccess closeViewSmoothImages -bool false
 defaults write com.apple.universalaccess closeViewScrollWheelModifiersInt -int 1048576
-# TODO: is it useful or automatically set?
+# TODO: useful?
 # defaults write com.apple.AppleMultitouchTrackpad HIDScrollZoomModifierMask -int 1048576
 # defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad HIDScrollZoomModifierMask -int 1048576
 
-# Set a blazingly fast keyboard repeat rate.
-# TODO: otherwise, 2.
-#defaults write NSGlobalDomain KeyRepeat -int 0
+# Set the keyboard repeat rate.
+defaults write NSGlobalDomain KeyRepeat -int 2
+defaults write NSGlobalDomain InitialKeyRepeat -int 15
 
 # Set language and text formats.
 defaults write NSGlobalDomain AppleLanguages -array "en" "zh-Hant"
@@ -68,10 +78,28 @@ defaults write NSGlobalDomain AppleLocale -string "en_FR@currency=EUR"
 defaults write NSGlobalDomain AppleMeasurementUnits -string "Centimeters"
 defaults write NSGlobalDomain AppleMetricUnits -bool true
 
-# TODO
+# Shortcuts to change input sources.
+# ⌥+↑ to Select the previous input source.
+/usr/libexec/PlistBuddy -c "Set :AppleSymbolicHotKeys:60:enabled bool true" ~/Library/Preferences/com.apple.symbolichotkeys.plist
+/usr/libexec/PlistBuddy -c "Delete :AppleSymbolicHotKeys:60:value:parameters" ~/Library/Preferences/com.apple.symbolichotkeys.plist
+/usr/libexec/PlistBuddy -c "Add :AppleSymbolicHotKeys:60:value:parameters array" ~/Library/Preferences/com.apple.symbolichotkeys.plist
+/usr/libexec/PlistBuddy -c "Add :AppleSymbolicHotKeys:60:value:parameters:0 integer 65535" ~/Library/Preferences/com.apple.symbolichotkeys.plist
+/usr/libexec/PlistBuddy -c "Add :AppleSymbolicHotKeys:60:value:parameters:1 integer 126" ~/Library/Preferences/com.apple.symbolichotkeys.plist
+/usr/libexec/PlistBuddy -c "Add :AppleSymbolicHotKeys:60:value:parameters:2 integer 2621440" ~/Library/Preferences/com.apple.symbolichotkeys.plist
+
+# ⌥+↓ to Select the next input source.
+/usr/libexec/PlistBuddy -c "Set :AppleSymbolicHotKeys:61:enabled bool true" ~/Library/Preferences/com.apple.symbolichotkeys.plist
+/usr/libexec/PlistBuddy -c "Delete :AppleSymbolicHotKeys:61:value:parameters" ~/Library/Preferences/com.apple.symbolichotkeys.plist
+/usr/libexec/PlistBuddy -c "Add :AppleSymbolicHotKeys:61:value:parameters array" ~/Library/Preferences/com.apple.symbolichotkeys.plist
+/usr/libexec/PlistBuddy -c "Add :AppleSymbolicHotKeys:61:value:parameters:0 integer 65535" ~/Library/Preferences/com.apple.symbolichotkeys.plist
+/usr/libexec/PlistBuddy -c "Add :AppleSymbolicHotKeys:61:value:parameters:1 integer 125" ~/Library/Preferences/com.apple.symbolichotkeys.plist
+/usr/libexec/PlistBuddy -c "Add :AppleSymbolicHotKeys:61:value:parameters:2 integer 2621440" ~/Library/Preferences/com.apple.symbolichotkeys.plist
+
 # Set the timezone.
-#sudo systemsetup -settimezone "Europe/Paris" > /dev/null
+sudo systemsetup -settimezone "Europe/Paris" > /dev/null
+# TODO: useful?
 #sudo systemsetup -setusingnetworktime on
+# TODO: how to set based on location?
 
 #-------------------------------------------------------------------------------
 # Screen
@@ -79,12 +107,6 @@ defaults write NSGlobalDomain AppleMetricUnits -bool true
 # Require password immediately after sleep or screen saver begins.
 defaults write com.apple.screensaver askForPassword -int 1
 defaults write com.apple.screensaver askForPasswordDelay -int 0
-
-# Save screenshots to the desktop.
-defaults write com.apple.screencapture location -string "${HOME}/Desktop"
-
-# Save screenshots in PNG format.
-defaults write com.apple.screencapture type -string "png"
 
 #-------------------------------------------------------------------------------
 # Finder
@@ -125,7 +147,7 @@ defaults write com.apple.frameworks.diskimages auto-open-rw-root -bool true
 defaults write com.apple.finder OpenWindowForNewRemovableDisk -bool true
 
 # Enable snap-to-grid for icons on the desktop and in other icon views.
-/usr/libexec/PlistBuddy -c "Set :DesktopViewSettings:IconViewSettings:arrangeBy grid" ~/Library/Preferences/com.apple.finder.plist
+/usr/libexec/PlistBuddy -c "Set :DesktopViewSettings:IconViewSettings:arrangeBy dateModified" ~/Library/Preferences/com.apple.finder.plist
 /usr/libexec/PlistBuddy -c "Set :FK_StandardViewSettings:IconViewSettings:arrangeBy grid" ~/Library/Preferences/com.apple.finder.plist
 /usr/libexec/PlistBuddy -c "Set :StandardViewSettings:IconViewSettings:arrangeBy grid" ~/Library/Preferences/com.apple.finder.plist
 
@@ -144,18 +166,24 @@ chflags nohidden ~/Library
 #-------------------------------------------------------------------------------
 # Dock, Dashboard, and hot corners
 #-------------------------------------------------------------------------------
+dockutil --remove all
+
+dockutil --add "/Applications/Xcode.app"
+dockutil --add "/Applications/Reeder.app"
+dockutil --add "/Applications/Google Chrome.app"
+dockutil --add "/Applications/Dash.app"
+dockutil --add "/Applications/Sublime Text.app"
+dockutil --add "/Applications/Calendar.app"
+dockutil --add "/Applications/Reeder.app"
+dockutil --add "/Applications/Messages.app"
+dockutil --add "/Applications/iTerm2.app"
+
+dockutil --add "/Applications" --view grid --display folder --sort name
+dockutil --add "$HOME/Dropbox" --view grid --display folder --sort name
+dockutil --add "$HOME/Downloads" --view grid --display stack --sort dateadded
+
 # Enable highlight hover effect for the grid view of a stack in the Dock.
 defaults write com.apple.dock mouse-over-hilite-stack -bool true
-
-# TODO: set up the Dock apps.
-# Wipe all (default) app icons from the Dock.
-# This is only really useful when setting up a new Mac, or if you don't use the
-# Dock to launch apps.
-#defaults write com.apple.dock persistent-apps -array
-# Add a spacer to the left side of the Dock (where the applications are)
-#defaults write com.apple.dock persistent-apps -array-add '{tile-data={}; tile-type="spacer-tile";}'
-# Add a spacer to the right side of the Dock (where the Trash is)
-#defaults write com.apple.dock persistent-others -array-add '{tile-data={}; tile-type="spacer-tile";}'
 
 # Automatically hide and show the Dock.
 defaults write com.apple.dock autohide -bool true
@@ -194,14 +222,31 @@ defaults write com.apple.dock wvous-br-modifier -int 0
 #-------------------------------------------------------------------------------
 # Alfred.app
 #-------------------------------------------------------------------------------
+# Set the sync folder.
+defaults write com.runningwithcrayons.Alfred-Preferences syncfolder -string "~/Dropbox/Utilitaires/Alfred"
 
-# TODO
+#-------------------------------------------------------------------------------
+# Dash.app
+#-------------------------------------------------------------------------------
+# Set the sync folder path.
+defaults write com.kapeli.dashdoc syncFolderPath -string "~/Dropbox/Utilitaires/Dash"
+defaults write com.kapeli.dashdoc snippetSQLPath -string "~/Dropbox/Utilitaires/Dash/library.dash"
+
+#-------------------------------------------------------------------------------
+# Day-O.app
+#-------------------------------------------------------------------------------
+# Set the hour format.
+defaults write com.shauninman.Day-O format -string "EEEE HH:mm"
 
 #-------------------------------------------------------------------------------
 # Divvy.app
 #-------------------------------------------------------------------------------
+# Don't show menu icon.
+defaults write com.mizage.direct.Divvy showMenuIcon -bool false
 
-# TODO
+# Set the global hotkey to ⌥+1.
+defaults write com.mizage.direct.Divvy useGlobalHotkey -bool true
+defaults write com.mizage.direct.Divvy globalHotkey -dict keyCode 18 modifiers 2048
 
 #-------------------------------------------------------------------------------
 # Google Chrome.app
@@ -209,13 +254,14 @@ defaults write com.apple.dock wvous-br-modifier -int 0
 # Expand the print dialog by default.
 defaults write com.google.Chrome PMPrintingExpandedStateForPrint2 -bool true
 
-# TODO
-
 #-------------------------------------------------------------------------------
 # iTerm2.app
 #-------------------------------------------------------------------------------
+# Set the custom prefs folder.
+defaults write com.googlecode.iterm2PrefsCustomFolder -string "~/Dropbox/Utilitaires/iTerm2"
 
-# TODO or via Dropbox/Google Drive
+# Don't display the prompt when quitting iTerm2.
+defaults write com.googlecode.iterm2 PromptOnQuit -bool false
 
 #-------------------------------------------------------------------------------
 # Mail.app
@@ -261,12 +307,6 @@ defaults write com.apple.Safari com.apple.Safari.ContentPageGroupIdentifier.WebK
 defaults write NSGlobalDomain WebKitDeveloperExtras -bool true
 
 #-------------------------------------------------------------------------------
-# Sublime Text.app
-#-------------------------------------------------------------------------------
-
-# TODO via Dropbox/Google Drive
-
-#-------------------------------------------------------------------------------
 # Terminal.app
 #-------------------------------------------------------------------------------
 # Only use UTF-8 in Terminal.app
@@ -310,16 +350,38 @@ defaults write com.twitter.twitter-mac ESCClosesComposeWindow -bool true
 #-------------------------------------------------------------------------------
 # Typinator.app
 #-------------------------------------------------------------------------------
+# Don't open the window at start.
+defaults write com.macility.typinator2 "Open Window at Start" -bool false
 
-# TODO
+#-------------------------------------------------------------------------------
+# Xcode.app
+#-------------------------------------------------------------------------------
+# Show line numbers.
+defaults write com.apple.dt.Xcode DVTTextShowLineNumbers -boolean true
+
+# Show folding ribbon.
+defaults write com.apple.dt.Xcode DVTTextShowFoldingSidebar -boolean true
+
+# Page guide at column 80.
+defaults write com.apple.dt.Xcode DVTTextShowPageGuide -boolean true
+defaults write com.apple.dt.Xcode DVTTextPageGuideLocation -int 80
+
+# Indent using spaces.
+defaults write com.apple.dt.Xcode DVTTextIndentUsingTabs -boolean false
+
+# Indent width.
+defaults write com.apple.dt.Xcode DVTTextIndentWidth -int 2
+
+# Trim trailing whitespace, including whitespace-only lines.
+defaults write com.apple.dt.Xcode DVTTextEditorTrimWhitespaceOnlyLines -boolean true
 
 #-------------------------------------------------------------------------------
 # Kill affected applications
 #-------------------------------------------------------------------------------
 for app in "Activity Monitor" "Address Book" "Calendar" "cfprefsd" "Contacts" \
   "Divvy" "Dock" "Finder" "Google Chrome" "iTerm2" "Mail" "Messages" "Photos" \
-  "Safari" "Sublime Text" "SystemUIServer" "Terminal" "Transmission" \
-  "Twitter"; do
+  "Safari" "Sublime Text" "SystemUIServer" "Terminal" "Transmission" "Twitter" \
+  "Typinator" "Xcode"; do
   killall "${app}" &> /dev/null
 done
 echo "Done. Note that some of these changes require a logout/restart to take effect."

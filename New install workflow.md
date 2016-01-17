@@ -1,7 +1,8 @@
 # New install
-Author: Louis Romero <lpromero@google.com>
+Author: Louis Romero <arcank@gmail.com>
 
-After a fresh install of OS X:
+## iCloud/App Store
+After a fresh install of OS X, sign into iCloud with Apple ID.
 
 ## Install Mac App Store apps
 Xcode
@@ -18,17 +19,12 @@ The Unarchiver
 
 ## Xcode
 Open and install components or simply `xcode-select --install`.
-- Gutter at 80 chars.
-- Show line numbers.
-- Show code folding ribbon.
-- Indentation 2 spaces.
-- Including whitespace only lines.
-TODO: defaults?
 
 ## Homebrew
 cd && mkdir homebrew && curl -L https://github.com/Homebrew/homebrew/tarball/master | tar xz --strip 1 -C homebrew
 SetFile -a V homebrew
 brew install colordiff
+brew install dockutil
 brew install imagemagick --with-webp
 brew install libimobiledevice
 brew install terminal-notifier
@@ -37,6 +33,7 @@ brew install watch
 brew install wget --with-iri
 brew install zsh-completions
 brew install z
+TODO: tap homebrew-bundle and use a Brewfile.
 
 ## GitHub
 Generate SSH keys (https://help.github.com/articles/generating-ssh-keys/).
@@ -63,102 +60,93 @@ ln -s ~/Developer/dotfiles/zshenv ~/.zshenv
 ln -s ~/Developer/dotfiles/zshrc ~/.zshrc
 
 ## zsh
-Go to System Preferences > Users & Groups > Unlock > right click on user >
-  Login shell > Change to `/bin/zsh`.
-TODO: is there a way to do it cleanly in the Terminal? chsh?
+chsh -s /bin/zsh
 
 ## Caskroom
 cd && mkdir -p caskroom/bin
 SetFile -a V caskroom
 brew install caskroom/cask/brew-cask
-- Tap the `caskroom/versions` repository.
 brew tap caskroom/versions
 
-## Dropbox
-brew cask install dropbox
-- Sign-in.
-- Selective sync.
-TODO: replace with defaults or version the preferences file.
-
-## 1Password
-Use vault in `Dropbox/Utilitaires/1Password/1Password.opvault`.
-TODO: replace with defaults?
-
-## Alfred
 brew cask install alfred
-- Have Alfred be the `cmd`+`space` handler.
-- Activate the PowerPack.
-- Set up the prefs from `Dropbox/Utilitaires/Alfred`.
-TODO: replace with defaults or version the preferences file?
-
-## iTerm2
-brew cask install iterm2
-- Preferences > General > Load preferences from a custom folder or URL:
-`Dropbox/Utilitaires/iTerm2`
-- Relaunch iTerm2.
-- Make sure the shell is `/bin/zsh`.
-$ echo $SHELL
-
-## Sublime Text
-brew cask install sublime-text3
-- Install Package Control
-https://packagecontrol.io/installation
-Known issue: https://github.com/wbond/package_control/issues/1002
-- Install PackageSync
-- PackageSync: Sync Online - Define Online Sync Folder
-`/Users/louis/Dropbox/Utilitaires/Sublime Text Package Syncing`
-- Restart Sublime Text
-
-## Dash
-Restore purchases.
-Set Sync folder to Dropbox.
-
-## DaisyDisk
 brew cask install daisydisk
-- Install license.
-TODO: replace with defaults.
-
-## Day-o
 brew cask install day-o
-- Set preferences to "EEEE HH:mm" in Day-O.
-- Remove the system hour.
-- Remove the system clock.
-TODO: replace with defaults.
-
-## Divvy
 brew cask install divvy
-- Install license.
-- Set shortcut to alt+1.
-- Set other preferences if any.
-TODO: replace with defaults or version the preferences file?
-
-## Kaleidoscope
-brew cask install kaleidoscope
-- Install license.
-TODO: replace with defaults?
-
-## Typinator
-brew cask install typinator59
-- Preferences in `Dropbox/Utilitaires/Typinator`.
-TODO: replace with defaults?
-
-## Other casks
+brew cask install dropbox
 brew cask install flux
 brew cask install free-ruler
+brew cask install google-chrome
+brew cask install iterm2
+brew cask install kaleidoscope
 brew cask install mactracker
 brew cask install slack
-- QuickLook plugins
-brew cask install provisioning qlcolorcode qlimagesize qlmarkdown qlprettypatch qlstephen quicklook-csv quicklook-json webpquicklook
+brew cask install sublime-text3
+brew cask install transmission
+brew cask install typinator59
+
+## QuickLook plugins
+brew cask install provisioning
+brew cask install qlcolorcode
+brew cask install qlimagesize
+brew cask install qlmarkdown
+brew cask install qlprettypatch
+brew cask install qlstephen
+brew cask install quicklook-csv
+brew cask install quicklook-json
+brew cask install webpquicklook
 killall Finder
 
 ## Set OS X preferences (may need apps to be installed first?)
-~/Developer/dotfiles/osx
+source ~/Developer/dotfiles/osx
 
-## iCloud
-TODO
+## Dropbox
+Sign-in.
+Selective sync.
+TODO: is there a way to version the preferences?
+
+## Google Chrome
+Create a Perso profile.
+Sign-in with louis@romero-hsu.com.
+Log into Pocket.
+Go to https://inbox.google.com and set it as Protocol Handler for mailto:.
+Enable Offline mode for Drive items. Chrome > Apps > Docs > Settings > Turn on offline sync.
+TODO: any way to do it programatically?
+
+## 1Password
+Use vault in `Dropbox/Utilitaires/1Password/1Password.opvault`.
+
+## Alfred
+Install license (PowerPack) stored in 1Password.
+
+## Sublime Text
+Install Package Control.
+https://packagecontrol.io/installation
+Known issue: https://github.com/wbond/package_control/issues/1002
+Install PackageSync.
+PackageSync: Sync Online - Define Online Sync Folder
+`/Users/louis/Dropbox/Utilitaires/Sublime Text Package Syncing`
+Restart Sublime Text.
+
+## Dash
+Restore purchases.
+
+## DaisyDisk
+Install license stored in 1Password.
+
+## Divvy
+Install license stored in 1Password.
+
+## Kaleidoscope
+Install license stored in 1Password.
+
+## Typinator
+Preferences in `Dropbox/Utilitaires/Typinator/Sets`.
+TODO: find the defaults to change. Is it in `com.macility.typinator2`?
 
 ## Delivery Status Dashboard widget
-https://junecloud.com/software/dashboard/delivery-status.html
+Download from https://junecloud.com/software/dashboard/delivery-status.html.
+Sign in.
+Allow local notifications.
 
 # TODO
 
@@ -175,3 +163,5 @@ https://github.com/neovim/neovim
 vimrc
 
 vundle
+
+https://github.com/Homebrew/homebrew-bundle
