@@ -183,6 +183,8 @@ source ~/Developer/dotfiles/osx
 - [ ] MoSh
 - [ ] https://github.com/mathiasbynens/dotfiles
 - [ ] https://github.com/neovim/neovim
+- [ ] https://github.com/keith/dotfiles/blob/master/osx/Brewfile
 - [ ] vimrc
 - [ ] vundle
 - [ ] https://github.com/Homebrew/homebrew-bundle
+- [ ] https://mattstauffer.co/blog/setting-up-a-new-os-x-development-machine-part-1-core-files-and-custom-shell
