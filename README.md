@@ -78,10 +78,12 @@ ssh -T git@github.com
 mkdir ~/Developer
 cd ~/Developer
 git clone git@github.com:Arcank/dotfiles.git
+cd
 ln -s Developer/dotfiles/gitattributes .gitattributes
 ln -s Developer/dotfiles/gitconfig .gitconfig
 ln -s Developer/dotfiles/gitignore .gitignore
 ln -s Developer/dotfiles/lldbinit .lldbinit
+ln -s Developer/dotfiles/vimrc .vimrc
 ln -s Developer/dotfiles/zshenv .zshenv
 ln -s Developer/dotfiles/zshrc .zshrc
 ```
