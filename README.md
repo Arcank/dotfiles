@@ -175,6 +175,8 @@ source ~/Developer/dotfiles/osx
 ## Kaleidoscope
 * Install license stored in 1Password.
 
+- [ ] TODO: Kaleidoscope stores license in ~/Library/Kaleidoscope.
+
 ## Typinator
 * Preferences in `Dropbox/Utilitaires/Typinator/Sets`.
 
