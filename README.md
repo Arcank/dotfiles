@@ -97,7 +97,7 @@ chsh -s /bin/zsh
 ```
 cd && mkdir -p caskroom/bin
 SetFile -a V caskroom
-brew install caskroom/cask/brew-cask
+brew tap caskroom/cask
 brew tap caskroom/versions
 
 brew cask install alfred
