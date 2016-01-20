@@ -29,10 +29,10 @@ alias -- -="cd -"
 alias alert="terminal-notifier -message Done"
 alias cp="cp -i"
 alias f="git grep --line-number --ignore-case"
+alias ffs="find . -name"
 ff() {
   ffs "*$1*"
 }
-alias ffs="find . -name"
 alias grep="grep --color=auto"
 alias la="ls -a"
 alias ll="ls -l"
