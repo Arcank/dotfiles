@@ -135,6 +135,7 @@ setopt APPEND_HISTORY
 setopt HIST_IGNORE_DUPS
 setopt HIST_EXPIRE_DUPS_FIRST
 setopt HIST_FIND_NO_DUPS
+setopt INC_APPEND_HISTORY
 
 #-------------------------------------------------------------------------------
 # Lines automatically added by some programs
