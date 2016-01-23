@@ -85,6 +85,9 @@ bindkey "\e[3~" delete-char
 # Global completion behavior
 zstyle ':completion:*:complete:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}'
 
+# Colors when completing.
+zstyle ':completion:*' list-colors ''
+
 # Menu select
 # http://zsh.sourceforge.net/Guide/zshguide06.html#l149
 # http://www.refining-linux.org/archives/40/ZSH-Gem-5-Menu-selection/
