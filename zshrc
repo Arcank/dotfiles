@@ -138,6 +138,7 @@ setopt APPEND_HISTORY
 setopt HIST_IGNORE_DUPS
 setopt HIST_EXPIRE_DUPS_FIRST
 setopt HIST_FIND_NO_DUPS
+setopt HIST_VERIFY
 setopt INC_APPEND_HISTORY
 
 #-------------------------------------------------------------------------------
