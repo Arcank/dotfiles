@@ -6,6 +6,7 @@ settings set -g target.inline-breakpoint-strategy always
 #-------------------------------------------------------------------------------
 # Aliases
 #-------------------------------------------------------------------------------
+# TODO: Might be useless starting in Xcode 7.3.
 command alias uikit expr @import UIKit
 command alias foundation expr @import Foundation
 command alias firstResponder po [[[UIApplication sharedApplication] keyWindow] firstResponder]
