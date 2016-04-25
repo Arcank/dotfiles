@@ -378,6 +378,9 @@ defaults write com.apple.dt.Xcode DVTTextEditorTrimWhitespaceOnlyLines -boolean 
 # Align consecutive // comments.
 defaults write com.apple.dt.Xcode DVTTextAlignConsecutiveSlashSlashComments -boolean true
 
+# Show the last build duration.
+defaults write com.apple.dt.Xcode ShowBuildOperationDuration -bool YES
+
 #-------------------------------------------------------------------------------
 # Kill affected applications
 #-------------------------------------------------------------------------------
