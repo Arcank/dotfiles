@@ -63,6 +63,9 @@ __git_files () {
 bindkey '^A' beginning-of-line
 bindkey '^E' end-of-line
 bindkey '^K' kill-line
+# http://superuser.com/questions/349439/how-to-bind-command-key-in-zsh
+bindkey '^[begin' beginning-of-line
+bindkey '^[end' end-of-line
 
 # Move by word.
 bindkey "\e\e[C" forward-word
@@ -71,7 +74,7 @@ bindkey "\e\e[D" backward-word
 # History search.
 bindkey '^R' history-incremental-search-backward
 
-# Up/down arrow search in history with
+# Up/down arrow search in history.
 bindkey '^[[A' up-line-or-search
 bindkey '^[[B' down-line-or-search
 
