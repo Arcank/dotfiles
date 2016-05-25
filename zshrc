@@ -5,8 +5,10 @@
 #-------------------------------------------------------------------------------
 export DEVELOPER_FOLDER="$HOME"/Developer
 
+export DEPOT_TOOLS="$DEVELOPER_FOLDER"/depot_tools
 export EDITOR="vim"
 export GEM_HOME=$HOME/.gem
+export GITHUB_FOLDER="$DEVELOPER_FOLDER"/GitHub
 export VISUAL="vim"
 export XCODE="/Applications/Xcode.app"
 
@@ -14,7 +16,7 @@ export XCODE="/Applications/Xcode.app"
 # Path additions (LIFO)
 #-------------------------------------------------------------------------------
 export PATH="$HOME"/caskroom/bin:$PATH
-export PATH=$GEM_HOME/bin:$PATH
+export PATH="$GEM_HOME"/bin:$PATH
 export PATH="$HOME"/homebrew/bin:$PATH
 export PATH="$HOME"/bin:$PATH
 
@@ -50,6 +52,14 @@ alias xcode="open -a $XCODE"
 __git_files () {
     _wanted files expl 'local files' _files
 }
+
+#-------------------------------------------------------------------------------
+# Prompt
+# https://github.com/git/git/blob/master/contrib/completion/git-prompt.sh
+#-------------------------------------------------------------------------------
+source "$DEVELOPER_FOLDER"/dotfiles/git-prompt.sh
+setopt PROMPT_SUBST ; PS1='%S%T %~ %#%s '
+RPROMPT='%S$(__git_ps1 "%s")%s'
 
 #-------------------------------------------------------------------------------
 # z

@@ -1,19 +1,20 @@
 [alias]
-  st = status
+  br = branch
   ci = commit
   co = checkout
-  br = branch
-  nb = new-branch
   df = diff
-  ds = diff --staged
-  do = diff origin/master
   dl = diff --name-only
+  do = diff origin/master
+  ds = diff --staged
+  ks = difftool
+  nb = new-branch
+  ru = rebase-update
   sb = squash-branch
-  snapshot = !git stash save "snapshot: $(date)" && git stash apply "stash@{0}"
-  remaster = rebase --onto origin/master origin/master
+  st = status
   conflicts = diff --name-only --diff-filter=U
   cpick = cherry-pick
-  ks = difftool
+  remaster = rebase --onto origin/master origin/master
+  snapshot = !git stash save "snapshot: $(date)" && git stash apply "stash@{0}"
 
 [color]
   ui = true

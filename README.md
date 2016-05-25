@@ -3,19 +3,6 @@
 ## iCloud
 During a fresh install of OS X, sign into iCloud with Apple ID.
 
-## Mac App Store
-* 1Password
-* Acorn
-* Dash
-* iMovie
-* iPhoto
-* iWork
-* Reeder
-* Soulver
-* Twitter
-* The Unarchiver
-* Xcode
-
 ## System Preferences
 * Change background image.
 * Change resolution.
@@ -25,34 +12,16 @@ During a fresh install of OS X, sign into iCloud with Apple ID.
 
 - [ ] TODO: use defaults.
 
+## zsh
+```
+chsh -s /bin/zsh
+```
+
 ## Xcode
 Open and install components or simply:
 ```
 xcode-select --install
 ```
-
-## Homebrew
-Install Homebrew
-```
-cd && mkdir homebrew
-SetFile -a V homebrew
-curl -L https://github.com/Homebrew/homebrew/tarball/master | tar xz --strip 1 -C homebrew
-```
-Install brews
-```
-brew install colordiff
-brew install dockutil
-brew install imagemagick --with-webp
-brew install libimobiledevice
-brew install terminal-notifier
-brew install trash
-brew install watch
-brew install wget --with-iri
-brew install zsh-completions
-brew install z
-```
-
-- [ ] TODO: tap homebrew-bundle and use a Brewfile.
 
 ## GitHub
 Generate SSH keys with [GitHub instructions](https://help.github.com/articles/generating-ssh-keys/).
@@ -78,6 +47,10 @@ ssh -T git@github.com
 mkdir ~/Developer
 cd ~/Developer
 git clone git@github.com:Arcank/dotfiles.git
+- Install the Powerline fonts.
+git submodule init
+git submodule update
+./submodules/powerline-fonts/install.sh
 cd
 ln -s Developer/dotfiles/gitattributes .gitattributes
 ln -s Developer/dotfiles/gitconfig .gitconfig
@@ -86,49 +59,21 @@ ln -s Developer/dotfiles/lldbinit .lldbinit
 ln -s Developer/dotfiles/vimrc .vimrc
 ln -s Developer/dotfiles/zshenv .zshenv
 ln -s Developer/dotfiles/zshrc .zshrc
+cd bin
+ln -s ../Developer/dotfiles/bin/gitstats.py
 ```
 
-## zsh
+## Homebrew, Cask and Mac App Store
+Install Homebrew
 ```
-chsh -s /bin/zsh
-```
-
-## Caskroom
-```
+cd && mkdir homebrew && curl -L https://github.com/Homebrew/homebrew/tarball/master | tar xz --strip 1 -C homebrew
 cd && mkdir -p caskroom/bin
+SetFile -a V homebrew
 SetFile -a V caskroom
-brew tap caskroom/cask
-brew tap caskroom/versions
-
-brew cask install alfred
-brew cask install daisydisk
-brew cask install day-o
-brew cask install divvy
-brew cask install dropbox
-brew cask install flux
-brew cask install free-ruler
-brew cask install google-chrome
-brew cask install iterm2
-brew cask install kaleidoscope
-brew cask install mactracker
-brew cask install slack
-brew cask install sublime-text3
-brew cask install transmission
-brew cask install typinator59
 ```
-
-## QuickLook plugins
+Install brews
 ```
-brew cask install provisioning
-brew cask install qlcolorcode
-brew cask install qlimagesize
-brew cask install qlmarkdown
-brew cask install qlprettypatch
-brew cask install qlstephen
-brew cask install quicklook-csv
-brew cask install quicklook-json
-brew cask install webpquicklook
-killall Finder
+brew bundle --file=Developer/dotfiles/Brewfile
 ```
 
 ## OS X preferences
