@@ -1,3 +1,6 @@
+# Tap head-only.
+tap 'homebrew/head-only'
+
 # Install brews.
 brew 'clang-format'
 brew 'colordiff'
