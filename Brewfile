@@ -25,11 +25,14 @@ mas 'GIF Brewery 3', id: 1081413713
 mas 'iMovie', id: 408981434
 mas 'iPhoto', id: 408981381
 mas 'Keynote', id: 409183694
+mas 'Mactracker', id: 430255202
 mas 'Numbers', id: 409203825
 mas 'Pages', id: 409201541
 mas 'Reeder', id: 880001334
+mas 'Slack', id: 803453959
 mas 'Soulver', id: 413965349
 mas 'Twitter', id: 409789998
+mas 'The Unarchiver', id: 425424353
 
 # Tap Cask.
 tap 'caskroom/cask'
@@ -50,9 +53,6 @@ cask 'github-desktop'
 cask 'google-chrome'
 cask 'iterm2'
 cask 'kaleidoscope'
-cask 'kaleidoscope'
-cask 'mactracker'
-cask 'mactracker'
 cask 'powerphotos'
 cask 'provisioning'
 cask 'qlcolorcode'
@@ -63,10 +63,8 @@ cask 'qlstephen'
 cask 'quicklook-csv'
 cask 'quicklook-json'
 cask 'remote-buddy'
-cask 'slack'
 cask 'spotify'
 cask 'sublime-text3'
-cask 'the-unarchiver'
 cask 'transmission'
 # Not the latest version.
 cask 'typinator59'
