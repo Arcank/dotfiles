@@ -65,6 +65,7 @@ cask 'quicklook-json'
 cask 'remote-buddy'
 cask 'spotify'
 cask 'sublime-text3'
+cask 'superduper'
 cask 'transmission'
 # Not the latest version.
 cask 'typinator59'
