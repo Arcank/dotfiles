@@ -14,7 +14,6 @@ brew 'terminal-notifier'
 brew 'trash'
 brew 'watch'
 brew 'wget', args: ['with-iri']
-brew 'z'
 brew 'zsh-completions'
 
 # Install Mac App Store apps.
