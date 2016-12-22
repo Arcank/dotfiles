@@ -19,7 +19,6 @@ brew 'zsh-completions'
 # Install Mac App Store apps.
 mas '1Password', id: 443987910
 mas 'Acorn', id: 634108295
-mas 'Dash', id: 449589707
 mas 'GIF Brewery 3', id: 1081413713
 mas 'iMovie', id: 408981434
 mas 'iPhoto', id: 408981381
