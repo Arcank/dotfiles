@@ -1,11 +1,11 @@
 # Tap head-only.
-tap 'homebrew/head-only'
+tap 'homebrew/boneyard'
 
 # Install brews.
 brew 'clang-format'
 brew 'colordiff'
 brew 'dockutil'
-brew 'homebrew/head-only/gitstats', args: ['HEAD']
+brew 'homebrew/boneyard/gitstats'
 brew 'ideviceinstaller'
 brew 'imagemagick', args: ['with-webp']
 brew 'lftp'
@@ -39,6 +39,8 @@ tap 'caskroom/versions'
 
 # Install Cask apps.
 cask 'alfred'
+cask 'airflow'
+cask 'caption'
 cask 'carbon-copy-cloner'
 cask 'colloquy'
 cask 'daisydisk'
